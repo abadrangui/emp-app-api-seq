@@ -12,6 +12,32 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    return queryInterface.bulkInsert('departments', [
+      {
+        name:'ЦОЁН ХХК',
+        root:'0',
+        companyId: 1,
+        desc: '',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name:'Мangaa Tech',
+        root:'0',
+        companyId: 2,
+        desc: '',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name:'MGA LLC',
+        root:'0',
+        companyId: 3,
+        desc: '',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ])
   },
 
   down: (queryInterface, Sequelize) => {
@@ -22,5 +48,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
+    return queryInterface.bulkDelete('departments', null, {});
   }
 };
