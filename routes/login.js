@@ -2,10 +2,11 @@ const express = require('express');
 
 const employeeModel = require('../models').employee;
 
-const employeeRouter = express.Router();
+const loginRouter = express.Router();
 
-employeeRouter.get('/login', (req, res) => {
+loginRouter.post('/', (req, res) => {
   const { username, password } = req.body;
+  console.log(req.body);
   employeeModel.findOne({ where: { username: username } })
     .then(data => {
       if(data.password === password){
@@ -24,4 +25,4 @@ employeeRouter.get('/login', (req, res) => {
 
 
 
-module.exports = employeeRouter;
+module.exports = loginRouter;

@@ -11,7 +11,7 @@ companyRouter.get('/', (req, res)=>{
         res.json({da:data});
     })
     .catch(err => {
-        res.json({er:error});
+        res.json({er:err});
     })
 })
 
