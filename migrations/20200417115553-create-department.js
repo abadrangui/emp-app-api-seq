@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       root: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       companyId: {
         type: Sequelize.INTEGER
