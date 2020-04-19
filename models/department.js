@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const department = sequelize.define('department', {
     name: DataTypes.STRING,
     root: DataTypes.STRING,
+    companyId: DataTypes.INTEGER,
     desc: DataTypes.STRING
   }, {
     charset: 'utf8',

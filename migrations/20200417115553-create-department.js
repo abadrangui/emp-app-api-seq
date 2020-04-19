@@ -14,6 +14,9 @@ module.exports = {
       root: {
         type: Sequelize.STRING
       },
+      companyId: {
+        type: Sequelize.INTEGER
+      },
       desc: {
         type: Sequelize.STRING
       },
