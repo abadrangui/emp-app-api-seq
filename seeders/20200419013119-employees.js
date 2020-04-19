@@ -4,6 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('employees', [
       {
+        username: 'user1',
         firstname:'ЦОЁН',
         lastname:'ЗАХИРАЛ',
         dateOfBirth: new Date(),
@@ -18,6 +19,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user2',
         firstname:'ЦОЁН',
         lastname:'МЕНЕЖЕР',
         dateOfBirth: new Date(),
@@ -32,6 +34,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user3',
         firstname:'ЦОЁН',
         lastname:'Ажилтан',
         dateOfBirth: new Date(),
@@ -46,6 +49,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user4',
         firstname:'Mangaa',
         lastname:'ЗАХИРАЛ',
         dateOfBirth: new Date(),
@@ -60,6 +64,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user5',
         firstname:'Mangaa',
         lastname:'МЕНЕЖЕР',
         dateOfBirth: new Date(),
@@ -74,6 +79,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user6',
         firstname:'Mangaa',
         lastname:'Ажилтан',
         dateOfBirth: new Date(),
@@ -88,6 +94,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user7',
         firstname:'MGA',
         lastname:'ЗАХИРАЛ',
         dateOfBirth: new Date(),
@@ -102,6 +109,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user8',
         firstname:'MGA',
         lastname:'МЕНЕЖЕР',
         dateOfBirth: new Date(),
@@ -116,6 +124,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        username: 'user9',
         firstname:'MGA',
         lastname:'Ажилтан',
         dateOfBirth: new Date(),
