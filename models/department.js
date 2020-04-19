@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     root: DataTypes.STRING,
     desc: DataTypes.STRING
-  }, {});
+  }, {
+    charset: 'utf8',
+    collate: 'utf8_unicode_ci'
+  });
   department.associate = function(models) {
     // associations can be defined here
   };

@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     departmentId: DataTypes.INTEGER,
     role: DataTypes.STRING,
     password: DataTypes.STRING
-  }, {});
+  }, {
+    charset: 'utf8',
+    collate: 'utf8_unicode_ci'
+  });
   employee.associate = function(models) {
     // associations can be defined here
   };
