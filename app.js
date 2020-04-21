@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const companyRouter = require('./routes/companies');
 const employeeRouter = require('./routes/employees');
 const loginRouter = require('./routes/login');
+const departmentRouter = require('./routes/departments');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(bodyParser.json());
 app.use('/companies', companyRouter);
 app.use('/employees', employeeRouter);
 app.use('/login', loginRouter);
+app.use('/departments', departmentRouter)
 
 
 app.get('/', (req, res) => {

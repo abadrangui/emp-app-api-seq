@@ -1,8 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const assignment = sequelize.define('assignment', {
-    // start end date nemeh
     name: DataTypes.STRING,
+    startDate: DataTypes.DATE,
+    endDate: DataTypes.DATE,
     planId: DataTypes.INTEGER,
     employeeId: DataTypes.INTEGER,
     createrId: DataTypes.INTEGER,

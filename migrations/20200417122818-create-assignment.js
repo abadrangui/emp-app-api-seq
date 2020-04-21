@@ -11,6 +11,12 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      startDate: {
+        type: Sequelize.DATE
+      },
+      endDate: {
+        type: Sequelize.DATE
+      },
       planId: {
         type: Sequelize.INTEGER
       },
