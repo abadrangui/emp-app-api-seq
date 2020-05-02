@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   department.associate = function(models) {
     // associations can be defined here
+    department.belongsTo(models.company, {as: 'company', foreignKey: 'companyId'})
   };
   return department;
 };

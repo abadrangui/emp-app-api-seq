@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   company.associate = function(models) {
     // associations can be defined here
+    company.hasMany(models.department)
   };
   return company;
 };

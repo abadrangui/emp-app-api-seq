@@ -6,7 +6,7 @@ const loginRouter = express.Router();
 
 loginRouter.post('/', (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
+
   employeeModel.findOne({ where: { username: username } })
     .then(data => {
       if(data.password === password){

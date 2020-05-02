@@ -34,3 +34,4 @@ app.use('/departments', departmentRouter)
 app.get('/', (req, res) => {
     res.send("index");
 })
+
