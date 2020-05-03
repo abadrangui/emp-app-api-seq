@@ -34,4 +34,40 @@ Route.post('/add', (req, res) => {
     })
 })
 
+Route.post('/edit', (req, res) => {
+  const {id, name, desc, root, companyId } = req.body;
+
+  Model.findOne({where: {id}})
+  .then(( dep ) => {
+    if(dep) {
+      dep.update({
+        name,
+        desc,
+        root,
+        companyId
+      })
+      .then(() => {res.sendStatus(204)})
+      .catch(err => {
+        console.log(err);
+        res.json({ er: err });
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.json({ er: err });
+  })
+
+  // Project.find({ where: { title: 'aProject' } })
+  // .on('success', function (project) {
+  //   // Check if record exists in db
+  //   if (project) {
+  //     project.update({
+  //       title: 'a very different title now'
+  //     })
+  //     .success(function () {})
+  //   }
+  // })
+})
+
 module.exports = Route;
