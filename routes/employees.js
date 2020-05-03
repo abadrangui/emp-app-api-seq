@@ -1,27 +1,29 @@
 const express = require('express');
 
-const employeeModel = require('../models').employee;
+const Model = require('../models').employee;
+const Department = require('../models').department;
 
-const employeeRouter = express.Router();
+const Route = express.Router();
 
-employeeRouter.get('/login', (req, res) => {
-  const { username, password } = req.body;
-  employeeModel.findOne({ where: { username: username } })
+Route.get('/findall/:id', (req, res) => {
+  Model.findAll({
+    where: { companyId: req.params.id },
+    include: [
+      { model: Department, as: "department" }
+    ]
+  })
     .then(data => {
-      if(data.password === password){
-        res.json({da: data});
-      } else {
-        res.sendStatus(401);
-      }
+      res.json({ emp: data });
     })
     .catch(err => {
-      res.json({er: err});
+      console.log(err);
+      res.json({ er: err });
     })
-})
+});
 
 
 
 
 
 
-module.exports = employeeRouter;
+module.exports = Route;

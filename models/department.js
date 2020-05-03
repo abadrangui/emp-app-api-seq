@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     department.belongsTo(models.company, {as: 'company', foreignKey: 'companyId'});
     department.belongsTo(models.department, {as: 'head', foreignKey: 'root'});
+    department.hasMany(models.employee);
   };
   return department;
 };

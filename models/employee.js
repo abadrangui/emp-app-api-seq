@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   employee.associate = function(models) {
     // associations can be defined here
+    employee.belongsTo(models.department, { as: 'department', foreignKey: 'departmentId'})
   };
   return employee;
 };

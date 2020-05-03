@@ -1,7 +1,6 @@
 const express = require('express');
 
 const Model = require('../models').department;
-const Company = require('../models').company;
 
 const Route = express.Router()
 
@@ -57,17 +56,26 @@ Route.post('/edit', (req, res) => {
     console.log(err);
     res.json({ er: err });
   })
+})
 
-  // Project.find({ where: { title: 'aProject' } })
-  // .on('success', function (project) {
-  //   // Check if record exists in db
-  //   if (project) {
-  //     project.update({
-  //       title: 'a very different title now'
-  //     })
-  //     .success(function () {})
-  //   }
-  // })
+Route.post('/delete', (req, res) => {
+  const {id, name, desc, root, companyId } = req.body;
+
+  Model.findOne({where: {id}})
+  .then(( dep ) => {
+    if(dep) {
+      dep.destroy()
+      .then(() => {res.sendStatus(204)})
+      .catch(err => {
+        console.log(err);
+        res.json({ er: err });
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.json({ er: err });
+  })
 })
 
 module.exports = Route;
