@@ -21,7 +21,16 @@ Route.get('/findall/:id', (req, res) => {
     })
 });
 
-
+Route.post('/add', (req, res) => {
+  Model.create(req.body)
+  .then(() => {
+    res.sendStatus(204)
+  })
+  .catch(err => {
+    console.log(err);
+    res.json({ er: err });
+  })
+})
 
 
 
