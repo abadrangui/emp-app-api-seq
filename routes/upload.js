@@ -6,8 +6,8 @@ const Department = require('../models').department;
 const Route = express.Router();
 
 Route.post('/addPlan', (req, res) => {
-    console.log(req.body);
-    file = req.body.file[0];
+    console.log(req.body.get('file'));
+    let file = req.body.file;
 
     file.mv(`${__dirname}/public/uploads/`, err => {
         console.log(err)

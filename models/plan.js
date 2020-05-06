@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     companyId: DataTypes.INTEGER,
     ownerId: DataTypes.INTEGER,
     fileId: DataTypes.INTEGER,
-    startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE,
+    startDate: DataTypes.STRING,
+    endDate: DataTypes.STRING,
     active: DataTypes.INTEGER
   }, {
     charset: 'utf8',
