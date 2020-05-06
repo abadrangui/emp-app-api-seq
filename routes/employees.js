@@ -51,7 +51,7 @@ Route.put('/edit', (req, res) => {
     })
 })
 
-Route.delete('/edit', (req, res) => {
+Route.post('/delete', (req, res) => {
   const {id} = req.body;
 
   Model.findOne({where: {id}})

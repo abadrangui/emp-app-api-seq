@@ -5,6 +5,8 @@ const companyRouter = require('./routes/companies');
 const employeeRouter = require('./routes/employees');
 const loginRouter = require('./routes/login');
 const departmentRouter = require('./routes/departments');
+const planRouter = require('./routes/plans');
+const uploadRouter = require('./routes/upload');
 
 const app = express();
 
@@ -28,7 +30,9 @@ app.use(bodyParser.json());
 app.use('/companies', companyRouter);
 app.use('/employees', employeeRouter);
 app.use('/login', loginRouter);
-app.use('/departments', departmentRouter)
+app.use('/departments', departmentRouter);
+app.use('/plans', planRouter);
+app.use('/upload', uploadRouter);
 
 
 app.get('/', (req, res) => {

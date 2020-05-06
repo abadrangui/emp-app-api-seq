@@ -11,6 +11,12 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      companyId: {
+        type: Sequelize.INTEGER
+      },
+      ownerId: {
+        type: Sequelize.INTEGER
+      },
       fileId: {
         type: Sequelize.INTEGER
       },
@@ -21,7 +27,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       active: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
