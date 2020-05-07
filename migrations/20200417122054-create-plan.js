@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fileId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       startDate: {
         type: Sequelize.STRING
