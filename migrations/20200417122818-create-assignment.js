@@ -41,6 +41,21 @@ module.exports = {
       messageId: {
         type: Sequelize.INTEGER
       },
+      act: {
+        type: Sequelize.STRING
+      }, 
+      capital: {
+        type: Sequelize.STRING
+      },
+      currentSituation: {
+        type: Sequelize.STRING
+      },
+      requirement: {
+        type: Sequelize.STRING
+      },
+      goal: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

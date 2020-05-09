@@ -20,7 +20,6 @@ Route.get('/findAll/:id', (req, res) => {
 
 
 Route.post('/add', (req, res) => {
-    console.log(req.body);
     Model.create(req.body)
     .then(() => {
       res.sendStatus(204)

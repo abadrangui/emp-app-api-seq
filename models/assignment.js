@@ -11,7 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     completionPercetage: DataTypes.INTEGER,
     fileId: DataTypes.INTEGER,
     statusId: DataTypes.INTEGER,
-    messageId: DataTypes.INTEGER
+    messageId: DataTypes.INTEGER,
+    act: DataTypes.STRING, 
+    capital: DataTypes.STRING, 
+    currentSituation: DataTypes.STRING, 
+    requirement: DataTypes.STRING, 
+    goal: DataTypes.STRING, 
   }, {
     charset: 'utf8',
     collate: 'utf8_unicode_ci'
