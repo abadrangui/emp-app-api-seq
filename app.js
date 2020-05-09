@@ -46,6 +46,6 @@ app.use('/asign', assignmentRouter);
 
 
 app.get('/', (req, res) => {
-  res.send("index");
+  res.send("МУИС-ын 4-р курсны оюутан Б.Тэргэлийн АЖИЛТНЫ АЖЛЫН ҮНЭЛГЭЭНИЙ СИСТЕМ-ын API ажиллаж байна");
 })
 
