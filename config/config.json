@@ -13,7 +13,6 @@
     "database": "heroku_7c84e9909fd4f87",
     "host": "us-cdbr-east-06.cleardb.net",
     "dialect": "mysql",
-    "use_env_variable": "mysql://b0eef8a02c266f:7b7ff9e8@us-cdbr-east-06.cleardb.net/heroku_7c84e9909fd4f87?reconnect=true",
     "operatorsAliases": false
   }
 }
