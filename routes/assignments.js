@@ -31,4 +31,18 @@ Route.post('/0/create', (req, res) => {
 })
 
 
+
+Route.post('/1/create', (req, res) => {
+  console.log(req.body);
+  // Model.create(req.body)
+  // .then(() => {
+  //   res.sendStatus(204)
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  //   res.json({ er: err });
+  // })
+})
+
+
 module.exports = Route;
