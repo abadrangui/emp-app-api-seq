@@ -16,14 +16,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
-db.sequelize.sync().then(function () {
-  app.listen(
-    PORT,
-    () => {
-      console.log(`server started at ${PORT} port`)
-    }
-  );
-})
+app.listen(
+  PORT,
+  () => {
+    console.log(`server started at ${PORT} port`)
+  }
+);
 
 
 app.use((req, res, next) => {
