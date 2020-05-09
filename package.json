@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx sequelize db:create --env testing && npx sequelize db:migrate --env testing && npx sequelize db:seed:all --env testing && node app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "author": "",

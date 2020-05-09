@@ -10,7 +10,7 @@
   "test": {
     "username": "b0eef8a02c266f",
     "password": "7b7ff9e8",
-    "database": "database_test",
+    "database": "heroku_7c84e9909fd4f87",
     "host": "us-cdbr-east-06.cleardb.net",
     "dialect": "mysql",
     "operatorsAliases": false
