@@ -2,8 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const assignment = sequelize.define('assignment', {
     name: DataTypes.STRING,
-    startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE,
+    startDate: DataTypes.STRING,
+    endDate: DataTypes.STRING,
     planId: DataTypes.INTEGER,
     employeeId: DataTypes.INTEGER,
     createrId: DataTypes.INTEGER,
@@ -23,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   assignment.associate = function(models) {
     // associations can be defined here
+    assignment.belongsTo(models.employee, {as: 'employee', foreignKey: 'employeeId'});
+    assignment.belongsTo(models.employee, {as: 'creater', foreignKey: 'createrId'})
   };
   return assignment;
 };

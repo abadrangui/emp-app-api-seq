@@ -42,7 +42,7 @@ app.use('/login', loginRouter);
 app.use('/departments', departmentRouter);
 app.use('/plans', planRouter);
 app.use('/upload', uploadRouter);
-app.use('/asign', assignmentRouter);
+app.use('/assign', assignmentRouter);
 
 
 app.get('/', (req, res) => {

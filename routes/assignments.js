@@ -1,7 +1,7 @@
 const express = require('express');
 
 const Model = require('../models').assignment;
-const Department = require('../models').department;
+const Employee = require('../models').employee;
 
 const Route = express.Router();
 
@@ -21,15 +21,14 @@ Route.get('/findAll/:id', (req, res) => {
 
 Route.post('/0/create', (req, res) => {
   Model.create(req.body)
-  .then(() => {
-    res.sendStatus(204)
-  })
-  .catch(err => {
-    console.log(err);
-    res.json({ er: err });
-  })
+    .then(() => {
+      res.sendStatus(204)
+    })
+    .catch(err => {
+      console.log(err);
+      res.json({ er: err });
+    })
 })
-
 
 
 Route.post('/1/create', (req, res) => {
@@ -44,5 +43,23 @@ Route.post('/1/create', (req, res) => {
   // })
 })
 
+
+Route.get('/findbyCreater/:id', (req, res) => {
+  Model.findAll({
+    where: { createrId: req.params.id },
+    include: [
+      { model: Employee, as: 'employee' },
+    ],
+    raw: true
+  })
+    .then(data => {
+      console.log("(((((((", data)
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json({ er: err });
+    })
+})
 
 module.exports = Route;

@@ -10,7 +10,8 @@ Route.get('/findall/:id', (req, res) => {
     where: { companyId: req.params.id },
     include: [
       { model: Department, as: "department" }
-    ]
+    ],
+    raw: true
   })
     .then(data => {
       res.json({ emp: data });
