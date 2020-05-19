@@ -22,6 +22,23 @@ Route.get('/findall/:id', (req, res) => {
     })
 });
 
+Route.get('/findbyDepartment/:id', (req, res) => {
+  Model.findAll({
+    where: { departmentId: req.params.id },
+    include: [
+      { model: Department, as: "department" }
+    ],
+    raw: true
+  })
+    .then(data => {
+      res.json({ emp: data });
+    })
+    .catch(err => {
+      console.log(err);
+      res.json({ er: err });
+    })
+});
+
 Route.post('/add', (req, res) => {
   Model.create(req.body)
     .then(() => {

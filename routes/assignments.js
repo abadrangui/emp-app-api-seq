@@ -53,7 +53,22 @@ Route.get('/findbyCreater/:id', (req, res) => {
     raw: true
   })
     .then(data => {
-      console.log("(((((((", data)
+      console.log("(((((((", req.params.id, data)
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json({ er: err });
+    })
+})
+
+Route.get('/findbyEmployee/:id', (req, res) => {
+  Model.findAll({
+    where: { employeeId: req.params.id },
+    raw: true
+  })
+    .then(data => {
+      console.log("hahahaahah", req.params.id, data)
       res.json(data);
     })
     .catch(err => {
