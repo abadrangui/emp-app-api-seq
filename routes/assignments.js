@@ -43,6 +43,36 @@ Route.post('/1/create', (req, res) => {
   // })
 })
 
+Route.post('/turnin', (req, res) => {
+  console.log(req.body);
+  const { 
+    fileId, 
+    id,
+    completionPercetage,
+  } = req.body
+  Model.findOne({ where: { id } })
+    .then(ass => {
+      if (ass) {
+        ass.update({ 
+          fileId: fileId,
+          statusId: 1,
+          completionPercetage: completionPercetage,
+        })
+          .then(() => {
+            res.sendStatus(204);
+          })
+          .catch(err => {
+            console.log(err);
+            res.json({ er: err });
+          })
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      res.json({ er: err });
+    })
+})
+
 
 Route.get('/findbyCreater/:id', (req, res) => {
   Model.findAll({
